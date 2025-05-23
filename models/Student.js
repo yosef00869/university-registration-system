@@ -6,6 +6,7 @@ const studentSchema = new mongoose.Schema({
   password: String,
   registeredCourses: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Course' }],
   totalCredits: { type: Number, default: 0 },
+  role: { type: String, default: 'student' },
 });
 
 module.exports = mongoose.model('Student', studentSchema);

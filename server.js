@@ -15,7 +15,9 @@ app.use('/api', courseRoutes);
 mongoose.connect('mongodb://localhost/university_registration', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-}).then(() => console.log('Connected to MongoDB'));
+}).then(async () => {
+  console.log('Connected to MongoDB');
+}).catch(err => console.error(err));
 
 app.listen(5000, () => {
   console.log('Server running on port 5000');
